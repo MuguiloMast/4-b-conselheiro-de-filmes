@@ -1,0 +1,329 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing:  border-box;
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 300;
+    font-style: normal;
+}    
+       body {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+          background-image: url('https://wallpapercave.com/wp/wp5108053.jpg');width: 100%;
+        background-position:top;
+        background-size: 100%;
+        background-repeat: no-repeat;
+
+          }
+
+        .input-group {
+          display: flex;
+          align-items: center;
+          background-color: #ffffff;
+          padding: 8px 16px 8px 8px;
+          border-radius: 24px;
+          gap: 8px;
+        }
+        .input-icon{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 100%;
+          min-width: 32px;
+          min-height: 32px;
+          background-color: blue;
+          color: #ffffff;
+        }
+        .input-field{
+          width: 100%;
+          border: none;
+          background-color: transparent;
+        }
+
+        .input-field:focus{
+          outline: none;
+        }
+
+        .items{
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+          list-style: none;
+          margin-top: 12px;
+          background-color: #ffffff;
+          border-radius: 24px;
+          padding:  14px;
+          width: 400px;
+          max-height: 450px;
+          overflow-y: auto;
+        }
+
+        .item {
+          display: flex;
+          gap: 12px;
+        }
+
+        .item-image img {
+          width: 100px;
+          height: 120px;
+          object-fit: cover;
+          border-radius: 8px;
+        }
+
+      .item-title{
+        font-size: 20px;
+        color: black;
+      }
+      .item-subtitle{
+        font-size: 13px;
+        color: #656565;
+      }
+          .item-description{
+        font-size: 15px;
+        color: #656565;
+      }
+
+      #no_results {
+        display: none;
+        text-align: center;
+      }
+
+
+
+/* 
+ajuda com o codigo do site:
+        
+https://img.freepik.com/free-photo/retro-world-theatre-day-scenes-with-curtains-stage_23-2151211426.jpg 
+
+https://www.youtube.com/watch?v=usk6jUwvDd8
+
+https://www.youtube.com/watch?v=dI8wiEs8cag
+
+https://www.youtube.com/watch?v=Um98BWEiVLI
+
+https://www.youtube.com/watch?v=MS0Y8msNIkU
+
+https://www.youtube.com/watch?v=wY_lVyze9IA
+
+
+link das imagens dos filmes:
+
+ file:///E:/4%C2%B0%20b%20gustavo/assets/img/Influ%C3%AAncia.jpg
+        
+ file:///E:/4%C2%B0%20b%20gustavo/assets/img/Interstellar.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Jumanji.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Jurassic%20World.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/King%20Kong.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Kung%20Fu%20Panda.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Liga%20Da%20Justi%C3%A7a.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Mad%20Max.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Matrix.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Maze%20Runner%20Prova%20De%20Fogo.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Megatubar%C3%A3o%202.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Minions.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Morbius.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Mortal%20Kombat.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Mulher%20Maravilha%201984.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Muppets.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Nocaute.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/O%20Culpado.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/O%20Menino%20Do%20Pijama%20Listrado.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/O%20Predador%20Primeira%20Presa.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/O%20Telefone%20Preto.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Os%20Smurfs.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Oz%20M%C3%A1gico%20Poderoso.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/P%C3%A2nico.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Pantera%20Negra.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Pirata%20Do%20Caribe.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Planeta%20Dos%20Macacos.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Quarteto%20Fant%C3%A1stico.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Rango.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Rob%C3%B4s.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Sem%20Remorso.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Sem%20Sa%C3%ADda.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Senna.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Shazam!.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Simpsons%20O%20Filme.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Sonic.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Sorria.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Space%20Jam.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Star%20Wars%203.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Superman.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Ta%20Dando%20Onda.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Tempo.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/The%20Batman.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/The%20Flash.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/The%20Incredible%20Hulk.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Thor%20Ragnarok.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Titanic.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Top%20Gun.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Transformers.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Tropa%20De%20Elite.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Turbo.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Twisters.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Um%20Lugar%20Silencioso.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Uma%20Noite%20De%20Crime.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Uncharted.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Velozes%20e%20Furiosos%20X.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Venom.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Vidro.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Vingadores%20Guerra%20Infinita.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Vi%C3%BAva%20Negra.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Viva%20A%20Vida%20%C3%89%20Uma%20Festa.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Wolverine.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Wonka.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/X-Men%20F%C3%AAnix%20Negra.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/%23Alive.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/1917.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/A%20Bruxa.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/A%20Casa%20Monstro.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/A%20Morte%20Do%20Dem%C3%B4nio.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/A%20Morte%20Te%20Da%20Parab%C3%A9ns.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Aberra%C3%A7%C3%B5es.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Ad%C3%A3o%20Negro.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Alerta%20Vermelho.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Alice%20No%20Pa%C3%ADs%20Das%20Maravilhas.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Alita.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Aquaman%202.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Aquaman.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Arremessando%20Alto.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Barbie.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Batman%20VS%20Superman.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Bom%20Dinossauro.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Ca%C3%A7a-Fantasmas.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Capit%C3%A3o%20America%20O%20Primeiro%20Vingador.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Carros%203.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Coringa.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Corre!.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Doutor%20Estranho.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Dune.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Dungeos%20&%20Dragons.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Elementos%20Secretos.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Era%20Do%20Gelo.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Esquadr%C3%A3o%20Suicida.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Eu%20Rob%C3%B4.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Fragmentado.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Fratura.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Garfield%20Fora%20De%20Casa.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Gente%20Grande%202.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Godzilla%20VS%20Kong.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Gran%20Turismo.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Guardi%C3%B5es%20Da%20Galaxia.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Halloween.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Hellboy.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Homem%20Aranha%20Longe%20De%20Casa.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Homem%20De%20%20Ferro.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Homem%20Formiga%20e%20a%20Vespa.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Homem-Aranha%20Atrav%C3%A9s%20do%20Aranhaverso.jpg
+
+file:///E:/4%C2%B0%20b%20gustavo/assets/img/Hotel%20Transylvania.jpg
+
+*/
